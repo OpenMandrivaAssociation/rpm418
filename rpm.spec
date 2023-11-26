@@ -93,14 +93,14 @@
 
 %global rpmsetup_version 0.4.0
 
-Summary:	The RPM package management system
-Name:		rpm
+Summary:	Old version of the RPM package management system
+Name:		rpm418
 Epoch:		4
 Version:	4.18.2
 Release:	%{?snapver:0.%{snapver}.}1
 Group:		System/Configuration/Packaging
 Url:		http://www.rpm.org/
-Source0:	http://ftp.rpm.org/releases/%{srcdir}/%{name}-%{srcver}.tar.bz2
+Source0:	http://ftp.rpm.org/releases/%{srcdir}/rpm-%{srcver}.tar.bz2
 # extracted from http://pkgs.fedoraproject.org/cgit/redhat-rpm-config.git/plain/macros:
 Source1:	macros.filter
 Source2:	rpm.rpmlintrc
@@ -291,6 +291,9 @@ Recommends:	rpm-plugin-systemd-inhibit
 Obsoletes:	rpm-plugin-audit
 
 %description
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 The RPM Package Manager (RPM) is a powerful command line driven
 package management system capable of installing, uninstalling,
 verifying, querying, and updating software packages.  Each software
@@ -307,6 +310,9 @@ Provides:	rpm-libs = %{version}-%{release}
 Obsoletes:	%{_lib}rpm5.4
 
 %description -n %{librpmname}
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 This package contains the RPM shared libraries.
 
 %package -n %{librpmbuild}
@@ -317,6 +323,9 @@ Obsoletes:	rpm-build-libs < %{version}-%{release}
 Provides:	rpm-build-libs%{?_isa} = %{version}-%{release}
 
 %description -n %{librpmbuild}
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 This package contains the RPM shared libraries for building and signing
 packages.
 
@@ -335,6 +344,9 @@ Requires:	%{librpmsign} = %{epoch}:%{version}-%{release}
 Obsoletes:	%{_lib}rpm-static-devel < 2:4.14-0
 
 %description -n %{librpmnamedevel}
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 This package contains the RPM C library and header files.  These
 development files will simplify the process of writing programs that
 manipulate RPM packages and databases. These files are intended to
@@ -351,6 +363,9 @@ Group:		System/Libraries
 License:	GPLv2+ and LGPLv2+ with exceptions
 
 %description -n %{librpmsign}
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 This package contains the RPM shared libraries for building and signing
 packages.
 
@@ -367,6 +382,9 @@ Requires:	%{librpmbuild} = %{epoch}:%{version}-%{release}
 Conflicts:	rpm-build < %{epoch}:%{version}-%{release}
 
 %description build
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 The rpm-build package contains the scripts and executable programs
 that are used to build packages using the RPM Package Manager.
 
@@ -375,6 +393,9 @@ Summary:	Package signing support
 Group:		System/Base
 
 %description sign
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 This package contains support for digitally signing RPM packages.
 
 %package -n python-%{name}
@@ -388,6 +409,9 @@ Obsoletes:	python2-%{name} < 2:4.15.1-0
 BuildRequires:	python-packaging
 
 %description -n python-%{name}
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 The python-rpm package contains a module that permits applications
 written in the Python programming language to use the interface
 supplied by RPM Package Manager libraries.
@@ -401,6 +425,9 @@ Group:		Documentation
 BuildArch:	noarch
 
 %description apidocs
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 This package contains API documentation for developing applications
 that will manipulate RPM packages and databases.
 
@@ -415,6 +442,9 @@ Requires:	rpm = %{epoch}:%{version}-%{release}
 Conflicts:	rpm < 2:4.14.0-0
 
 %description cron
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 This package contains a cron job which creates daily logs of installed
 packages on a system.
 
@@ -427,6 +457,9 @@ Requires:	%{librpmname}%{?_isa} = %{epoch}:%{version}-%{release}
 Conflicts:	rpm < 2:4.14.0-0
 
 %description plugin-syslog
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 This plugin exports RPM actions to the system log.
 
 %package plugin-systemd-inhibit
@@ -438,6 +471,9 @@ Requires:	%{librpmname}%{?_isa} = %{epoch}:%{version}-%{release}
 Conflicts:	rpm < 2:4.14.0-0
 
 %description plugin-systemd-inhibit
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 This plugin blocks systemd from entering idle, sleep or shutdown while an rpm
 transaction is running using the systemd-inhibit mechanism.
 
@@ -449,6 +485,9 @@ Requires:	%{librpmname}%{?_isa} = %{epoch}:%{version}-%{release}
 Conflicts:	rpm < 2:4.14.0-0
 
 %description plugin-ima
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 This plugin adds support for enforcing and verifying IMA file signatures
 in an rpm.
 
@@ -460,6 +499,9 @@ Requires:	%{librpmname}%{?_isa} = %{epoch}:%{version}-%{release}
 Conflicts:	rpm < 2:4.14.0-0
 
 %description plugin-prioreset
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 %{summary}.
 
 Useful on legacy SysV init systems if you run rpm transactions with
@@ -471,6 +513,9 @@ Group:		System/Base
 Requires:	%{librpmname}%{?_isa} = %{epoch}:%{version}-%{release}
 
 %description plugin-fsverity
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 This plugin provides fsverity functionality to rpm
 
 %package plugin-dbus-announce
@@ -479,11 +524,14 @@ Group:		System/Base
 Requires:	%{librpmname}%{?_isa} = %{epoch}:%{version}-%{release}
 
 %description plugin-dbus-announce
+THIS IS AN OLD VERSION, PROVIDED FOR TRANSITION ONLY.
+Please use rpm instead.
+
 This plugin provides DBus functionality to rpm
 %endif # with plugins
 
 %prep
-%autosetup -n %{name}-%{srcver} -p1 -a 5
+%autosetup -n rpm-%{srcver} -p1 -a 5
 
 # Restore python packaging bits
 cat python-rpm-packaging-main/platform.in >>platform.in
@@ -707,7 +755,22 @@ for i in *; do
 done
 cd -
 
-%find_lang %{name}
+# For the compat package, only library files are needed.
+cd %{buildroot}
+rm -rf \
+	.%{_bindir} \
+	.%{_datadir}/locale \
+	.%{_unitdir} \
+	.%{_libdir}/rpm-plugins \
+	.%{_localstatedir} \
+	.%{_sysconfdir} \
+	.%{rpmhome} \
+	.%{_mandir} \
+	.%{_prefix}/lib/rpm \
+	.%{_includedir} \
+	.%{_libdir}/pkgconfig \
+	.%{_libdir}/*.so \
+	.%{python3_sitearch}
 
 %if %{with check}
 %check
@@ -715,138 +778,11 @@ cd -
 eatmydata make check || (cat tests/rpmtests.log; exit 0)
 %endif
 
-%triggerun -p <lua> -- rpm < 4:4.18.1
-pkgs = posix.stat("/var/lib/rpm/rpmdb.sqlite")
-oldpkgs = posix.stat("/var/lib/rpm/Packages")
-if not pkgs then
-    if oldpkgs then
-	f = io.open("/var/lib/rpm/.rebuilddb", "w")
-	f:close()
-    else
-	os.execute("%{_bindir}/rpm --initdb")
-    end
-end
-
-%triggerun -p <lua> -- python-%{name} < 4:4.18.1
-path = "%{python_sitearch}/rpm-4.18.0-py3.10.egg-info"
-st = posix.stat(path)
-if st and st.type == "directory" then
-    os.execute("rm -rf " .. path)
-end
-
-%files -f %{name}.lang
-%doc COPYING
-%attr(0755,rpm,rpm) %{_bindir}/rpm
-%attr(0755, rpm, rpm) %{_bindir}/rpm2cpio
-%attr(0755, rpm, rpm) %{_bindir}/rpm2archive
-%attr(0755, rpm, rpm) %{_bindir}/gendiff
-%attr(0755, rpm, rpm) %{_bindir}/rpmdb
-%attr(0755, rpm, rpm) %{_bindir}/rpmkeys
-%attr(0755, rpm, rpm) %{_bindir}/rpmgraph
-%{_bindir}/rpmquery
-%{_bindir}/rpmverify
-
-%{_unitdir}/rpmdb-rebuild.service
-
-%dir %{_libdir}/rpm-plugins
-
-%dir %{_localstatedir}/spool/repackage
-%dir %{rpmhome}
-%dir /etc/rpm
-%config(noreplace) /etc/rpm/macros
-%dir /etc/rpm/macros.d
-%attr(0755, rpm, rpm) %{rpmhome}/rpmdb_*
-%attr(0644, rpm, rpm) %{rpmhome}/macros
-%rpmhome/macros.d
-%attr(0755, rpm, rpm) %{rpmhome}/mkinstalldirs
-%attr(0755, rpm, rpm) %{rpmhome}/rpm.*
-%attr(0644, rpm, rpm) %{rpmhome}/rpmpopt*
-%attr(0644, rpm, rpm) %{rpmhome}/rpmrc
-%attr(0755, rpm, rpm) %{rpmhome}/elfdeps
-%attr(0755, rpm, rpm) %{rpmhome}/script.req
-
-%rpmattr %{rpmhome}/rpm2cpio.sh
-%rpmattr %{rpmhome}/tgpg
-
-%dir %attr(   -, rpm, rpm) %{rpmhome}/fileattrs
-%attr(0644, rpm, rpm) %{rpmhome}/fileattrs/*.attr
-
-%attr(   -, rpm, rpm) %{rpmhome}/platform/
-
-%doc %{_mandir}/man8/rpm.8*
-%doc %{_mandir}/man8/rpmdb.8*
-%doc %{_mandir}/man8/rpmgraph.8*
-%doc %{_mandir}/man8/rpmkeys.8*
-%doc %{_mandir}/man8/rpm2cpio.8*
-%doc %{_mandir}/man8/rpm-misc.8*
-%doc %{_mandir}/man8/rpm2archive.8*
-%doc %{_mandir}/man8/rpm-plugins.8*
-%doc %{_mandir}/man1/*.1*
-%doc %lang(fr) %{_mandir}/fr/man[18]/*.[18]*
-%doc %lang(ja) %{_mandir}/ja/man[18]/*.[18]*
-%doc %lang(ko) %{_mandir}/ko/man[18]/*.[18]*
-%doc %lang(pl) %{_mandir}/pl/man[18]/*.[18]*
-%doc %lang(ru) %{_mandir}/ru/man[18]/*.[18]*
-%doc %lang(sk) %{_mandir}/sk/man[18]/*.[18]*
-
-%attr(0755, rpm, rpm) %dir %{_localstatedir}/lib/rpm
-
-%define rpmdbattr %attr(0644, rpm, rpm) %verify(not md5 size mtime) %ghost %config(missingok,noreplace)
-
-%rpmdbattr /var/lib/rpm/Basenames
-%rpmdbattr /var/lib/rpm/Conflictname
-%rpmdbattr /var/lib/rpm/__db.0*
-%rpmdbattr /var/lib/rpm/Dirnames
-%rpmdbattr /var/lib/rpm/Group
-%rpmdbattr /var/lib/rpm/Installtid
-%rpmdbattr /var/lib/rpm/Name
-%rpmdbattr /var/lib/rpm/Obsoletename
-%rpmdbattr /var/lib/rpm/Packages
-%rpmdbattr /var/lib/rpm/Providename
-%rpmdbattr /var/lib/rpm/Provideversion
-%rpmdbattr /var/lib/rpm/Removetid
-%rpmdbattr /var/lib/rpm/Requirename
-%rpmdbattr /var/lib/rpm/Requireversion
-%rpmdbattr /var/lib/rpm/Sha1header
-%rpmdbattr /var/lib/rpm/Sigmd5
-%rpmdbattr /var/lib/rpm/Triggername
-
-%rpmdbattr /var/lib/rpm/rpmdb.sqlite
-%rpmdbattr /var/lib/rpm/rpmdb.sqlite-shm
-%rpmdbattr /var/lib/rpm/rpmdb.sqlite-wal
-
 %files -n %{librpmname}
 %{_libdir}/librpm.so.%{libmajor}
 %{_libdir}/librpm.so.%{libmajor}.*
 %{_libdir}/librpmio.so.%{libmajor}
 %{_libdir}/librpmio.so.%{libmajor}.*
-%if %{with plugins}
-%dir %{_libdir}/rpm-plugins
-
-%files plugin-syslog
-%{_libdir}/rpm-plugins/syslog.so
-%doc %{_mandir}/man8/rpm-plugin-syslog.8*
-
-%files plugin-systemd-inhibit
-%{_libdir}/rpm-plugins/systemd_inhibit.so
-%doc %{_mandir}/man8/rpm-plugin-systemd-inhibit.8*
-
-%files plugin-ima
-%{_libdir}/rpm-plugins/ima.so
-%doc %{_mandir}/man8/rpm-plugin-ima.8*
-
-%files plugin-prioreset
-%{_libdir}/rpm-plugins/prioreset.so
-%doc %{_mandir}/man8/rpm-plugin-prioreset.8*
-
-%files plugin-fsverity
-%{_libdir}/rpm-plugins/fsverity.so
-
-%files plugin-dbus-announce
-%{_sysconfdir}/dbus-1/system.d/org.rpm.conf
-%{_libdir}/rpm-plugins/dbus_announce.so
-%doc %{_mandir}/man8/rpm-plugin-dbus-announce.8*
-%endif # with plugins
 
 %files -n %{librpmbuild}
 %{_libdir}/librpmbuild.so.%{libmajor}
@@ -855,57 +791,3 @@ end
 %files -n %{librpmsign}
 %{_libdir}/librpmsign.so.%{libmajor}
 %{_libdir}/librpmsign.so.%{libmajor}.*
-
-%files build
-%doc docs/manual
-%{_bindir}/rpmlua
-%{_prefix}/lib/rpm/rpm_macros_provides.sh
-%{_prefix}/lib/rpm/rpmuncompress
-%rpmattr %{_bindir}/rpmbuild
-%rpmattr %{_bindir}/rpmspec
-%rpmattr %{_prefix}/lib/rpm/brp-*
-%rpmattr %{_prefix}/lib/rpm/check-files
-%{_prefix}/lib/rpm/debugedit
-%{_prefix}/lib/rpm/sepdebugcrcfix
-%rpmattr %{_prefix}/lib/rpm/*.prov
-%{_prefix}/lib/rpm/find-debuginfo.sh
-%rpmattr %{_prefix}/lib/rpm/find-lang.sh
-%rpmattr %{_prefix}/lib/rpm/find-provides
-%rpmattr %{_prefix}/lib/rpm/find-requires
-%rpmattr %{_prefix}/lib/rpm/perl.req
-%rpmattr %{_prefix}/lib/rpm/check-buildroot
-%rpmattr %{_prefix}/lib/rpm/check-prereqs
-%rpmattr %{_prefix}/lib/rpm/check-rpaths
-%rpmattr %{_prefix}/lib/rpm/check-rpaths-worker
-%rpmattr %{_prefix}/lib/rpm/ocamldeps.sh
-%rpmattr %{_prefix}/lib/rpm/pkgconfigdeps.sh
-%rpmattr %{_prefix}/lib/rpm/pythondistdeps.py
-%rpmattr %{_prefix}/lib/rpm/rpmdeps
-
-%doc %{_mandir}/man8/rpmbuild.8*
-%doc %{_mandir}/man8/rpmdeps.8*
-%doc %{_mandir}/man8/rpmspec.8*
-%doc %{_mandir}/man8/rpmlua.8*
-
-%files sign
-%{_bindir}/rpmsign
-%doc %{_mandir}/man8/rpmsign.8*
-
-%files -n python-%{name}
-%{python3_sitearch}/rpm-*.egg-info
-%{python3_sitearch}/rpm/__init__.py
-%{python3_sitearch}/rpm/transaction.py
-%{python3_sitearch}/rpm/_rpm.so
-
-%files -n %{librpmnamedevel}
-%{_libdir}/librp*[a-z].so
-%{_libdir}/pkgconfig/%{name}.pc
-%{_includedir}/%{name}/
-
-%files apidocs
-%doc docs/librpm
-%doc COPYING
-
-%files cron
-%config(noreplace) /etc/cron.daily/rpm
-%config(noreplace) /etc/logrotate.d/rpm
