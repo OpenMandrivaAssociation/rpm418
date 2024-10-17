@@ -99,7 +99,7 @@ Epoch:		4
 Version:	4.18.2
 Release:	%{?snapver:0.%{snapver}.}1
 Group:		System/Configuration/Packaging
-Url:		http://www.rpm.org/
+Url:		https://www.rpm.org/
 Source0:	http://ftp.rpm.org/releases/%{srcdir}/rpm-%{srcver}.tar.bz2
 # extracted from http://pkgs.fedoraproject.org/cgit/redhat-rpm-config.git/plain/macros:
 Source1:	macros.filter
